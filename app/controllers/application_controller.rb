@@ -14,10 +14,4 @@ class ApplicationController < ActionController::Base
   end
   helper_method :form_parent, :store_form
 
-  protected
-
-    def id
-      params[:id]
-    end
-
 end
