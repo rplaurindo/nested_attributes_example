@@ -1,0 +1,14 @@
+!!!5
+%html
+  %head
+
+    = stylesheet_link_tag 'application', media: :all
+    = yield :stylesheets if content_for? :stylesheets
+
+    = javascript_include_tag 'application'
+    = yield :javascripts if content_for? :javascripts
+
+    = yield :head if content_for? :head
+
+  %body
+    = content_for?(:body) ? yield(:body) : yield

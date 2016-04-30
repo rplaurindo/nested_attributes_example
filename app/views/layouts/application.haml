@@ -1,0 +1,12 @@
+- content_for :stylesheets do
+  = stylesheet_link_tag 'layout', media: :all
+
+- content_for :body do
+  %main
+    %header
+
+    %section
+      #container
+        = yield
+
+= render template: 'layouts/default'
