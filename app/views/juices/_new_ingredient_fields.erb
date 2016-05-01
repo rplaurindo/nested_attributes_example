@@ -1,0 +1,14 @@
+<%= fields_for 'juice[juice_ingredients_attributes][]', @juice_ingredient do |juice_ingredient_f| %>
+  <div class="field new">
+    <div class="inline">
+      <%= juice_ingredient_f.label "Name" %>
+      <%= juice_ingredient_f.select :ingredient_id, options_for_select(ingredients.map{ |o| [o[:name], o[:id]] }) %>
+    </div>
+
+    <div class="inline">
+      <%= juice_ingredient_f.label "Amount" %>
+      <%= juice_ingredient_f.text_field :amount %>
+    </div>
+
+  </div>
+<% end %>
