@@ -2,7 +2,6 @@ class JuicesController < ApplicationController
   respond_to :html, :js
 
   def new_ingredient
-    binding.pry
     respond_with @juice_ingredient = JuiceIngredient.new, layout: false
   end
 
