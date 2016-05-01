@@ -1,6 +1,4 @@
 = form_for @juice do |juice_f|
-  - store_form juice_f
-
   %fieldset
     %legend
       Juice Data
@@ -14,4 +12,7 @@
       Ingredients
 
     .field
-      = link_to "Add ingredient", new_juice_ingredient_path, remote: true, class: "new_juice_ingredient"
+      = link_to "Add ingredient", new_juice_ingredient_path, remote: true
+
+    - @juice.each_ingredients juice_f do |html|
+      = html
