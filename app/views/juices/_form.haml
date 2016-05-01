@@ -14,3 +14,6 @@
 
     .field
       = link_to "Add ingredient", new_juice_ingredient_path, remote: true, class: "new_juice_ingredient"
+
+    - @juice.each_ingredients juice_f do |html|
+      = html
