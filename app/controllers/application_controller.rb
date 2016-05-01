@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception, if: Proc.new { |c| c.request.format != 'application/json' }
   protect_from_forgery with: :null_session, if: Proc.new { |c| c.request.format == 'application/json' }
 
-  def form_parent
+  def form
     @@form_parent
   end
 
   def store_form object
     @@form_parent = object
   end
-  helper_method :form_parent, :store_form
+  helper_method :form, :store_form
 
 end
