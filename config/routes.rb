@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :juices
+  resources :juices, only: [:new, :index]
   get "/juices/ingredients/new" => "juices#new_ingredient", as: :new_juice_ingredient
+  get "/juices/edit"            => "juices#edit", as: :edit_juice
 
-  root to: "juices#new"
+  root to: "juices#edit"
 end
