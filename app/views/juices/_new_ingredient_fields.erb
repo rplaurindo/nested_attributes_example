@@ -1,4 +1,4 @@
-<%= fields_for 'juice[juice_ingredients_attributes][]', @juice_ingredient do |juice_ingredient_f| %>
+<%= fields_for "juice[juice_ingredients_attributes][#{Time.now.strftime("%y%m%d%H%M%S%L%N")}]", @juice_ingredient do |juice_ingredient_f| %>
   <div class="field new">
     <div class="inline">
       <%= juice_ingredient_f.label "Name" %>
